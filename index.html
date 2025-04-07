@@ -23,16 +23,6 @@
     h1 {
       margin-bottom: 10px;
     }
-
-    /* 🔥 Custom moderator badge style */
-    .disqus-comment .moderator {
-      background-color: #4F7942 !important; /* Fern Green */
-      color: white !important;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 0.8em;
-    }
   </style>
 </head>
 <body>
@@ -57,24 +47,3 @@
 </body>
 </html>
 
-<!-- Disqus Comments End -->
-
-<script>
-  // Try to access Disqus iframe and style the badge
-  const iframe = document.querySelector('iframe[src*="disqus.com"]');
-  if (iframe) {
-    try {
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      const badge = doc.querySelector('.moderator');
-      if (badge) {
-        badge.style.background = '#4F7942';
-        badge.style.color = '#fff';
-      }
-    } catch (e) {
-      console.log("Can't access iframe (blocked by browser security)");
-    }
-  }
-</script>
-
-</body>
-</html>
