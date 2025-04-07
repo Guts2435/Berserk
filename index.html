@@ -2,53 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berserk</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #3b2314;
+      background: #3a231d;
       color: #fff;
       text-align: center;
+      padding: 40px;
     }
+
     .banner {
-      width: 100%;
-      height: auto;
-      display: block;
+      background-image: url('banner_resized.jpg');
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      margin-bottom: 30px;
     }
+
     .container {
-      padding: 20px;
-    }
-    .box {
-      background-color: #5c3d2e;
-      padding: 20px;
+      background: #5e4036;
+      padding: 40px;
       border-radius: 8px;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Clean full-width banner -->
-  <img src="banner_resized.jpg" alt="Berserk Banner" class="banner">
+  <!-- Banner Image -->
+  <div class="banner"></div>
 
   <div class="container">
-    <div class="box">
-      <h1>Welcome to Berserk</h1>
-      <p>This is a chill space to drop thoughts or updates.</p>
-    </div>
-
-    <div style="margin-top: 30px;">
-      <h3>What do you think?</h3>
-      <p>4 Responses</p>
-      <!-- Reactions go here -->
-    </div>
+    <h1>Welcome to Berserk</h1>
+    <p>This is a chill space to drop thoughts or updates.</p>
   </div>
+
+  <!-- Disqus Comments Start -->
+  <div id="disqus_thread"></div>
+  <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://berserk-14.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the 
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <!-- Disqus Comments End -->
 
 </body>
 </html>
+
 
 
 
