@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Berserk</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #3b2314;
       color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
     }
+
+    /* ✅ Proper banner fix */
     .banner {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: contain; /* important! */
     }
+
     .container {
       padding: 20px;
     }
+
     .box {
       background-color: #5c3d2e;
       padding: 20px;
@@ -27,12 +32,16 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
+    .reactions {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Clean full-width banner -->
-  <img src="banner_resized.jpg" alt="Berserk Banner" class="banner">
+  <!-- ✅ No cropping, full clean image -->
+  <img src="banner_resized.jpg" alt="Berserk Banner" class="banner" />
 
   <div class="container">
     <div class="box">
@@ -40,10 +49,10 @@
       <p>This is a chill space to drop thoughts or updates.</p>
     </div>
 
-    <div style="margin-top: 30px;">
+    <div class="reactions">
       <h3>What do you think?</h3>
       <p>4 Responses</p>
-      <!-- Reactions go here -->
+      <!-- Emojis go here -->
     </div>
   </div>
 
