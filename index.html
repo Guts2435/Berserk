@@ -5,32 +5,35 @@
   <title>Berserk</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #3a231d;
+      background-color: #3a231d;
       color: #fff;
-      text-align: center;
-      padding: 40px;
     }
 
     .banner {
-      background-image: url('anime-berserk-guts-berserk-wallpaper-preview.jpg');
-      height: 250px;
+      width: 100%;
+      height: 300px;
+      background: url('Berserk/anime-berserk-guts-berserk-wallpaper-preview.jpg') no-repeat center center;
       background-size: cover;
-      background-position: center;
-      border-radius: 8px;
-      margin-bottom: 30px;
     }
 
     .container {
       background: #5e4036;
       padding: 40px;
       border-radius: 8px;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 30px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    #disqus_thread {
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -39,29 +42,36 @@
   <!-- Banner Image -->
   <div class="banner"></div>
 
+  <!-- Forum Container -->
   <div class="container">
     <h1>Welcome to Berserk</h1>
     <p>This is a chill space to drop thoughts or updates.</p>
+
+    <!-- Disqus Embed -->
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = 'berserk-thread';
+      };
+
+      (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://berserk-14.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the 
+      <a href="https://disqus.com/?ref_noscript" style="color: #ccc;">comments powered by Disqus</a>.
+    </noscript>
+    <!-- End Disqus -->
   </div>
 
-  <!-- Disqus Comments Start -->
-  <div id="disqus_thread" style="margin-top: 40px;"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = window.location.href;
-      this.page.identifier = window.location.pathname;
-    };
+</body>
+</html>
 
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://berserk-14.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the 
-    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
+
   <!-- Disqus Comments End -->
 
 </body>
