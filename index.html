@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Berserk</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: #3a231d;
@@ -11,48 +15,48 @@
       text-align: center;
       padding: 0;
       margin: 0;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .banner {
+    .side-strip {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      background: linear-gradient(to bottom, #2a1a15, #3a231d, #2a1a15);
+      z-index: 0;
+    }
+
+    .side-strip.left {
+      left: 0;
+    }
+
+    .side-strip.right {
+      right: 0;
+    }
+
+    .content-wrapper {
       position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .banner-top {
+      width: 100%;
+      height: 200px;
       background-image: url('anime-berserk-guts-berserk-wallpaper-preview.jpg');
-      height: 300px;
       background-size: cover;
       background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       border-bottom: 4px solid #fff;
-    }
-
-    .banner-text {
-      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-      padding: 20px 40px;
-      border-radius: 8px;
-    }
-
-    .banner-text h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #f8d7b9;
-    }
-
-    .banner-text p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #f0e0d6;
     }
 
     .container {
       background: #5e4036;
       padding: 40px;
       border-radius: 0 0 8px 8px;
-      max-width: 800px;
-      margin: auto;
       margin-top: -20px;
-      z-index: 1;
-      position: relative;
     }
 
     #disqus_thread {
@@ -62,37 +66,40 @@
 </head>
 <body>
 
-  <!-- Banner Image with Text -->
-  <div class="banner">
-    <div class="banner-text">
+  <!-- Side Strips -->
+  <div class="side-strip left"></div>
+  <div class="side-strip right"></div>
+
+  <!-- Page Content -->
+  <div class="content-wrapper">
+    <!-- Banner -->
+    <div class="banner-top"></div>
+
+    <!-- Main Content -->
+    <div class="container">
       <h1>Welcome to Berserk</h1>
       <p>This is a chill space to drop thoughts or updates.</p>
     </div>
+
+    <!-- Disqus Comments -->
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+      };
+
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://berserk-14.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the 
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
   </div>
-
-  <div class="container">
-    <!-- Main site content if needed -->
-  </div>
-
-  <!-- Disqus Comments Start -->
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = window.location.href;
-      this.page.identifier = window.location.pathname;
-    };
-
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://berserk-14.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the 
-    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
-  <!-- Disqus Comments End -->
 
 </body>
 </html>
