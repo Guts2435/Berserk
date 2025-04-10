@@ -13,35 +13,13 @@
       margin: 0;
     }
 
-    .banner {
-      position: relative;
-      background-image: url('https://guts2435.github.io/Berserk/anime-berserk-guts-berserk-wallpaper-preview.jpg');
-      height: 300px;
+    .banner-top {
+      width: 100%;
+      height: 200px;
+      background-image: url('anime-berserk-guts-berserk-wallpaper-preview.jpg');
       background-size: cover;
       background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       border-bottom: 4px solid #fff;
-    }
-
-    .banner-text {
-      background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-      padding: 20px 40px;
-      border-radius: 8px;
-    }
-
-    .banner-text h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #f8d7b9;
-    }
-
-    .banner-text p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #f0e0d6;
     }
 
     .container {
@@ -62,19 +40,16 @@
 </head>
 <body>
 
-  <!-- Banner Image with Text -->
-  <div class="banner">
-    <div class="banner-text">
-      <h1>Welcome to Berserk</h1>
-      <p>This is a chill space to drop thoughts or updates.</p>
-    </div>
-  </div>
+  <!-- Simple Top Banner -->
+  <div class="banner-top"></div>
 
+  <!-- Main Welcome Text -->
   <div class="container">
-    <!-- Main site content if needed -->
+    <h1>Welcome to Berserk</h1>
+    <p>This is a chill space to drop thoughts or updates.</p>
   </div>
 
-  <!-- Disqus Comments Start -->
+  <!-- Disqus Comments -->
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
@@ -92,7 +67,6 @@
   <noscript>Please enable JavaScript to view the 
     <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
-  <!-- Disqus Comments End -->
 
 </body>
 </html>
