@@ -106,10 +106,10 @@
 
       body {
         justify-content: flex-start;
-        font-size: 19px;
-        line-height: 1.75;
-        letter-spacing: 0.4px;
-        padding: 0 10px;
+        font-size: 17px;
+        line-height: 1.85;
+        letter-spacing: 0.3px;
+        padding: 0 8px;
       }
 
       .side-strip {
@@ -117,12 +117,12 @@
       }
 
       .content-wrapper {
-        padding: 0 12px;
+        padding: 0 8px;
         width: 100%;
       }
 
       .container {
-        padding: 18px 12px;
+        padding: 16px 10px;
         border-radius: 0;
       }
 
@@ -132,32 +132,33 @@
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
 
       .mark-symbol {
-        font-size: 26px;
+        font-size: 24px;
       }
 
       p {
-        font-size: 19px;
-        line-height: 1.65;
+        font-size: 17px;
+        line-height: 1.85;
       }
 
       #disqus_thread {
-        max-width: 95vw;
+        max-width: 98vw;
         margin: 24px auto;
-        font-size: 19px;
+        font-size: 17px;
       }
 
       #disqus_thread a {
-        font-size: 18px !important;
+        font-size: 17px !important;
         font-weight: bold !important;
+        word-break: break-word;
       }
 
       #disqus_thread time,
       #disqus_thread .author {
-        font-size: 17px !important;
+        font-size: 16px !important;
         font-weight: bold !important;
       }
 
@@ -166,9 +167,9 @@
       #disqus_thread .post-content,
       #disqus_thread .comment,
       #disqus_thread .post-header {
-        font-size: 19px !important;
-        line-height: 1.85 !important;
-        padding: 10px 12px !important;
+        font-size: 17px !important;
+        line-height: 1.95 !important;
+        padding: 10px 10px !important;
       }
 
       .comment__avatar,
@@ -180,13 +181,15 @@
       #disqus_thread img,
       #disqus_thread video,
       #disqus_thread iframe {
-        display: none !important;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        border-radius: 4px;
       }
 
       .post-message a[href*="uploads.disquscdn.com"]:before {
-        content: "📁 View — ";
-        color: royalblue;
-        font-weight: bold;
+        content: none;
       }
     }
   </style>
