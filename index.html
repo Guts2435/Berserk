@@ -101,21 +101,21 @@
     }
 
     /* === MOBILE STYLING FINAL FIX === */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 600px) {
       html {
         scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
       }
 
       body {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.75;
-        letter-spacing: 0.4px;
-        padding: 0 10px;
+        letter-spacing: 0.3px;
+        padding: 0 6px;
       }
 
       .zoom-box {
-        transform: scale(0.85);
+        transform: scale(0.9);
       }
 
       .side-strip {
@@ -123,47 +123,47 @@
       }
 
       .content-wrapper {
-        padding: 0 12px;
+        padding: 0 8px;
         width: 100%;
       }
 
       .container {
-        padding: 18px 12px;
+        padding: 20px 10px;
         border-radius: 0;
       }
 
       .banner-top {
-        height: 130px;
+        height: 120px;
         border-bottom: 2px solid #7a6650;
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
 
       .mark-symbol {
-        font-size: 26px;
+        font-size: 24px;
       }
 
       p {
-        font-size: 19px;
-        line-height: 1.65;
+        font-size: 18px;
+        line-height: 1.6;
       }
 
       #disqus_thread {
         max-width: 95vw;
         margin: 24px auto;
-        font-size: 19px;
+        font-size: 18px;
       }
 
       #disqus_thread a {
-        font-size: 18px !important;
+        font-size: 17px !important;
         font-weight: bold !important;
       }
 
       #disqus_thread time,
       #disqus_thread .author {
-        font-size: 17px !important;
+        font-size: 16px !important;
         font-weight: bold !important;
       }
 
@@ -172,15 +172,15 @@
       #disqus_thread .post-content,
       #disqus_thread .comment,
       #disqus_thread .post-header {
-        font-size: 19px !important;
-        line-height: 1.85 !important;
+        font-size: 18px !important;
+        line-height: 1.7 !important;
         padding: 10px 12px !important;
       }
 
       .comment__avatar,
       .post-header,
       .post-actions {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
 
       #disqus_thread img,
@@ -189,7 +189,8 @@
         display: none !important;
       }
 
-      .post-message a[href*="uploads.disquscdn.com"]:before {
+      /* Replace media links with label */
+      .post-message a[href*="uploads.disquscdn.com"]::before {
         content: "📁 View — ";
         color: royalblue;
         font-weight: bold;
@@ -232,6 +233,11 @@
       <noscript>Please enable JavaScript to view the 
         <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
       </noscript>
+    </div>
+  </div>
+</body>
+</html>
+
     </div>
   </div>
 </body>
