@@ -23,7 +23,7 @@
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 200px; /* Doubled from 100px */
+      width: 200px; /* default for desktop */
       background: linear-gradient(to bottom, #2a1a15, #3a231d, #2a1a15);
       z-index: 0;
     }
@@ -63,7 +63,19 @@
       margin-top: 40px;
     }
 
-    @media (min-width: 1400px) {
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .side-strip {
+        width: 60px;
+      }
+
+      .content-wrapper {
+        margin-left: 60px;
+        margin-right: 60px;
+      }
+    }
+
+    @media (min-width: 769px) {
       .content-wrapper {
         margin-left: 200px;
         margin-right: 200px;
@@ -110,4 +122,3 @@
 
 </body>
 </html>
-
