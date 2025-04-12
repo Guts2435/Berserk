@@ -21,6 +21,11 @@
       justify-content: center;
     }
 
+    .zoom-box {
+      transform-origin: top center;
+      transition: transform 0.2s ease-in-out;
+    }
+
     .side-strip {
       position: fixed;
       top: 0;
@@ -106,10 +111,14 @@
 
       body {
         justify-content: flex-start;
-        font-size: 17px;
-        line-height: 1.85;
-        letter-spacing: 0.3px;
-        padding: 0 8px;
+        font-size: 19px;
+        line-height: 1.75;
+        letter-spacing: 0.4px;
+        padding: 0 10px;
+      }
+
+      .zoom-box {
+        transform: scale(0.85);
       }
 
       .side-strip {
@@ -117,12 +126,12 @@
       }
 
       .content-wrapper {
-        padding: 0 8px;
+        padding: 0 12px;
         width: 100%;
       }
 
       .container {
-        padding: 16px 10px;
+        padding: 18px 12px;
         border-radius: 0;
       }
 
@@ -132,33 +141,32 @@
       }
 
       h1 {
-        font-size: 30px;
+        font-size: 32px;
       }
 
       .mark-symbol {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       p {
-        font-size: 17px;
-        line-height: 1.85;
+        font-size: 19px;
+        line-height: 1.65;
       }
 
       #disqus_thread {
-        max-width: 98vw;
+        max-width: 95vw;
         margin: 24px auto;
-        font-size: 17px;
+        font-size: 19px;
       }
 
       #disqus_thread a {
-        font-size: 17px !important;
+        font-size: 18px !important;
         font-weight: bold !important;
-        word-break: break-word;
       }
 
       #disqus_thread time,
       #disqus_thread .author {
-        font-size: 16px !important;
+        font-size: 17px !important;
         font-weight: bold !important;
       }
 
@@ -167,9 +175,9 @@
       #disqus_thread .post-content,
       #disqus_thread .comment,
       #disqus_thread .post-header {
-        font-size: 17px !important;
-        line-height: 1.95 !important;
-        padding: 10px 10px !important;
+        font-size: 19px !important;
+        line-height: 1.85 !important;
+        padding: 10px 12px !important;
       }
 
       .comment__avatar,
@@ -181,56 +189,53 @@
       #disqus_thread img,
       #disqus_thread video,
       #disqus_thread iframe {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 10px auto;
-        border-radius: 4px;
+        display: none !important;
       }
 
       .post-message a[href*="uploads.disquscdn.com"]:before {
-        content: none;
+        content: "📁 View — ";
+        color: royalblue;
+        font-weight: bold;
       }
     }
   </style>
 </head>
 <body>
+  <div class="zoom-box">
+    <!-- Side Strips -->
+    <div class="side-strip left"></div>
+    <div class="side-strip right"></div>
 
-  <!-- Side Strips -->
-  <div class="side-strip left"></div>
-  <div class="side-strip right"></div>
+    <!-- Page Content -->
+    <div class="content-wrapper">
+      <!-- Banner -->
+      <div class="banner-top"></div>
 
-  <!-- Page Content -->
-  <div class="content-wrapper">
-    <!-- Banner -->
-    <div class="banner-top"></div>
+      <!-- Main Content -->
+      <div class="container">
+        <h1>Berserk <span class="mark-symbol">𒉭</span></h1>
+        <p>This is a chill space to drop thoughts or updates.</p>
+      </div>
 
-    <!-- Main Content -->
-    <div class="container">
-      <h1>Berserk <span class="mark-symbol">𒉭</span></h1>
-      <p>This is a chill space to drop thoughts or updates.</p>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = window.location.href;
+          this.page.identifier = window.location.pathname;
+        };
+
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://berserk-14.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the 
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+      </noscript>
     </div>
-
-    <!-- Disqus Comments -->
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = window.location.href;
-        this.page.identifier = window.location.pathname;
-      };
-
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://berserk-14.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the 
-      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
   </div>
-
 </body>
 </html>
-
