@@ -16,6 +16,8 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+      display: flex;
+      justify-content: center;
     }
 
     .side-strip {
@@ -42,9 +44,6 @@
       width: 100%;
       margin: 0 auto;
       padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .banner-top {
@@ -54,7 +53,6 @@
       background-size: cover;
       background-position: center;
       border-bottom: 4px solid #7a6650;
-      border-radius: 0 0 8px 8px;
     }
 
     .container {
@@ -63,7 +61,6 @@
       border-radius: 0 0 8px 8px;
       margin-top: -20px;
       text-align: center;
-      width: 100%;
       color: #f5f0e1;
     }
 
@@ -97,27 +94,31 @@
 
     #disqus_thread {
       margin-top: 40px;
-      width: 100%;
     }
 
-    /* === MOBILE STYLING === */
+    /* === Mobile Styling === */
     @media screen and (max-width: 768px) {
+      body {
+        justify-content: flex-start;
+      }
+
       .side-strip {
         display: none;
       }
 
       .content-wrapper {
         padding: 0 12px;
+        width: 100%;
+      }
+
+      .container {
+        padding: 16px;
+        border-radius: 0;
       }
 
       .banner-top {
         height: 140px;
         border-bottom: 2px solid #7a6650;
-      }
-
-      .container {
-        padding: 20px 16px;
-        border-radius: 0;
       }
 
       h1 {
@@ -174,6 +175,38 @@
       <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
   </div>
+
+  <!-- Clean Mobile View for Media -->
+  <script>
+    function simplifyMediaInDisqus() {
+      const mobile = window.innerWidth <= 768;
+      if (!mobile) return;
+
+      const observer = new MutationObserver(() => {
+        document.querySelectorAll('#disqus_thread img, #disqus_thread video, #disqus_thread iframe').forEach(media => {
+          if (!media.dataset.replaced) {
+            const link = document.createElement('a');
+            link.href = media.src || media.currentSrc || media.getAttribute('src');
+            link.innerText = '🔗 View';
+            link.style.color = '#4e8ef7';
+            link.style.display = 'inline-block';
+            link.style.margin = '8px 0';
+            media.replaceWith(link);
+            link.dataset.replaced = "true";
+          }
+        });
+      });
+
+      observer.observe(document.getElementById('disqus_thread'), {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(simplifyMediaInDisqus, 1500); // delay to let Disqus load
+    });
+  </script>
 
 </body>
 </html>
