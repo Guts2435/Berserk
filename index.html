@@ -23,7 +23,7 @@
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 100px;
+      width: 200px; /* Doubled from 100px */
       background: linear-gradient(to bottom, #2a1a15, #3a231d, #2a1a15);
       z-index: 0;
     }
@@ -61,6 +61,13 @@
 
     #disqus_thread {
       margin-top: 40px;
+    }
+
+    @media (min-width: 1400px) {
+      .content-wrapper {
+        margin-left: 200px;
+        margin-right: 200px;
+      }
     }
   </style>
 </head>
@@ -103,3 +110,4 @@
 
 </body>
 </html>
+
