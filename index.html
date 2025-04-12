@@ -97,12 +97,19 @@
       margin-top: 40px;
     }
 
-    /* === BASIC MOBILE STYLING === */
+    /* === MOBILE STYLING FINAL FIX === */
     @media screen and (max-width: 768px) {
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
       body {
         justify-content: flex-start;
         font-size: 18px;
-        padding: 0;
+        line-height: 1.7;
+        letter-spacing: 0.4px;
+        padding: 0 10px;
       }
 
       .side-strip {
@@ -138,8 +145,9 @@
       }
 
       #disqus_thread {
-        margin: 24px 0;
-        font-size: 17px;
+        max-width: 95vw;
+        margin: 24px auto;
+        font-size: 18px;
       }
 
       #disqus_thread a {
@@ -153,65 +161,25 @@
         font-weight: bold !important;
       }
 
-      #disqus_thread .post-message {
-        font-size: 17px !important;
-        font-weight: 500 !important;
+      #disqus_thread .post-message,
+      #disqus_thread .post-body,
+      #disqus_thread .post-content,
+      #disqus_thread .comment,
+      #disqus_thread .post-header {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+        padding: 10px 12px !important;
+      }
+
+      .comment__avatar,
+      .post-header,
+      .post-actions {
+        transform: scale(1.05);
       }
 
       #disqus_thread img,
       #disqus_thread video,
       #disqus_thread iframe {
-        display: none !important;
-      }
-
-      #disqus_thread .post-message::after {
-        content: "📎 View";
-        display: block;
-        margin-top: 8px;
-        color: #3d73dd;
-        font-weight: bold;
-      }
-    }
-
-    /* === MOBILE STYLING FIXES === */
-    @media (max-width: 768px) {
-      html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      body {
-        font-size: 17px;
-        line-height: 1.6;
-        letter-spacing: 0.3px;
-        padding: 0 10px;
-      }
-
-      #disqus_thread {
-        max-width: 95vw;
-        margin: 0 auto;
-      }
-
-      .post-message, 
-      .post-content, 
-      .post, 
-      .post-body,
-      .post-header, 
-      .comment {
-        font-size: 17px !important;
-        padding: 8px 10px !important;
-        margin: 6px 0 !important;
-      }
-
-      .comment__avatar, 
-      .post-header, 
-      .post-actions {
-        transform: scale(1.05);
-      }
-
-      .post-message img,
-      .post-message video,
-      .post-message iframe {
         display: none !important;
       }
 
@@ -262,3 +230,4 @@
 
 </body>
 </html>
+
