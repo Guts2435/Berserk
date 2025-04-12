@@ -16,6 +16,7 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+      position: relative;
       display: flex;
       justify-content: center;
     }
@@ -96,10 +97,11 @@
       margin-top: 40px;
     }
 
-    /* === Mobile Styling === */
+    /* === MOBILE STYLING === */
     @media screen and (max-width: 768px) {
       body {
         justify-content: flex-start;
+        font-size: 17px;
       }
 
       .side-strip {
@@ -122,19 +124,50 @@
       }
 
       h1 {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       .mark-symbol {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       p {
-        font-size: 14px;
+        font-size: 15.5px;
       }
 
       #disqus_thread {
         margin: 20px 0;
+        font-size: 17px;
+      }
+
+      #disqus_thread a {
+        font-size: 17px !important;
+        font-weight: bold !important;
+      }
+
+      #disqus_thread time,
+      #disqus_thread .author {
+        font-size: 16px !important;
+        font-weight: bold !important;
+      }
+
+      #disqus_thread .post-message {
+        font-size: 17px !important;
+        font-weight: 500 !important;
+      }
+
+      #disqus_thread img,
+      #disqus_thread video,
+      #disqus_thread iframe {
+        display: none !important;
+      }
+
+      #disqus_thread .post-message::after {
+        content: "📎 View";
+        display: block;
+        margin-top: 8px;
+        color: #3d73dd;
+        font-weight: bold;
       }
     }
   </style>
@@ -175,38 +208,6 @@
       <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
   </div>
-
-  <!-- Clean Mobile View for Media -->
-  <script>
-    function simplifyMediaInDisqus() {
-      const mobile = window.innerWidth <= 768;
-      if (!mobile) return;
-
-      const observer = new MutationObserver(() => {
-        document.querySelectorAll('#disqus_thread img, #disqus_thread video, #disqus_thread iframe').forEach(media => {
-          if (!media.dataset.replaced) {
-            const link = document.createElement('a');
-            link.href = media.src || media.currentSrc || media.getAttribute('src');
-            link.innerText = '🔗 View';
-            link.style.color = '#4e8ef7';
-            link.style.display = 'inline-block';
-            link.style.margin = '8px 0';
-            media.replaceWith(link);
-            link.dataset.replaced = "true";
-          }
-        });
-      });
-
-      observer.observe(document.getElementById('disqus_thread'), {
-        childList: true,
-        subtree: true
-      });
-    }
-
-    window.addEventListener('load', () => {
-      setTimeout(simplifyMediaInDisqus, 1500); // delay to let Disqus load
-    });
-  </script>
 
 </body>
 </html>
