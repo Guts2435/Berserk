@@ -23,7 +23,7 @@
       position: fixed;
       top: 0;
       bottom: 0;
-      width: 200px; /* default for desktop */
+      width: 100px;
       background: linear-gradient(to bottom, #2a1a15, #3a231d, #2a1a15);
       z-index: 0;
     }
@@ -63,22 +63,22 @@
       margin-top: 40px;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
+    /* === MOBILE STYLING === */
+    @media screen and (max-width: 768px) {
       .side-strip {
-        width: 60px;
+        display: none; /* hide side strips */
       }
 
       .content-wrapper {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin: 0 10px; /* add some side margin for breathing room */
       }
-    }
 
-    @media (min-width: 769px) {
-      .content-wrapper {
-        margin-left: 200px;
-        margin-right: 200px;
+      .container {
+        padding: 20px;
+      }
+
+      .banner-top {
+        height: 150px;
       }
     }
   </style>
@@ -122,3 +122,4 @@
 
 </body>
 </html>
+
