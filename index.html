@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berserk</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <style>
@@ -108,14 +109,13 @@
       }
 
       body {
-        font-size: 18px;
-        line-height: 1.75;
-        letter-spacing: 0.3px;
-        padding: 0 6px;
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 0;
       }
 
       .zoom-box {
-        transform: scale(0.9);
+        transform: none;
       }
 
       .side-strip {
@@ -123,73 +123,47 @@
       }
 
       .content-wrapper {
-        padding: 0 8px;
+        padding: 0 12px;
         width: 100%;
       }
 
-      .container {
-        padding: 20px 10px;
-        border-radius: 0;
-      }
-
       .banner-top {
-        height: 120px;
+        height: 140px;
+        background-position: center top;
         border-bottom: 2px solid #7a6650;
       }
 
+      .container {
+        padding: 20px 16px;
+        border-radius: 0;
+      }
+
       h1 {
-        font-size: 30px;
+        font-size: 28px;
+        margin-bottom: 10px;
       }
 
       .mark-symbol {
-        font-size: 24px;
+        font-size: 20px;
       }
 
       p {
-        font-size: 18px;
-        line-height: 1.6;
+        font-size: 16px;
+        margin-bottom: 16px;
       }
 
       #disqus_thread {
-        max-width: 95vw;
-        margin: 24px auto;
-        font-size: 18px;
+        margin-top: 30px;
+        font-size: 16px;
       }
 
-      #disqus_thread a {
-        font-size: 17px !important;
-        font-weight: bold !important;
-      }
-
-      #disqus_thread time,
-      #disqus_thread .author {
-        font-size: 16px !important;
-        font-weight: bold !important;
-      }
-
-      #disqus_thread .post-message,
-      #disqus_thread .post-body,
-      #disqus_thread .post-content,
-      #disqus_thread .comment,
-      #disqus_thread .post-header {
-        font-size: 18px !important;
-        line-height: 1.7 !important;
-        padding: 10px 12px !important;
-      }
-
-      .comment__avatar,
-      .post-header,
-      .post-actions {
-        transform: scale(1.03);
-      }
-
+      /* Hide media in Disqus on mobile */
       #disqus_thread img,
       #disqus_thread video,
       #disqus_thread iframe {
         display: none !important;
       }
 
-      /* Replace media links with label */
       .post-message a[href*="uploads.disquscdn.com"]::before {
         content: "📁 View — ";
         color: royalblue;
@@ -215,31 +189,38 @@
         <p>This is a chill space to drop thoughts or updates.</p>
       </div>
 
-      <!-- Disqus Comments -->
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-          this.page.url = window.location.href;
-          this.page.identifier = window.location.pathname;
-        };
+      <!-- Disqus Toggle Button -->
+      <button id="toggleComments" style="margin: 24px auto; display: block;">Toggle Comments</button>
 
-        (function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://berserk-14.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the 
-        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-      </noscript>
+      <!-- Disqus Section -->
+      <div id="disqusWrapper" style="display: none;">
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+          };
+
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://berserk-14.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the 
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
   </div>
+
+  <script>
+    // Toggle Disqus Comments
+    document.getElementById("toggleComments").onclick = function () {
+      const wrapper = document.getElementById("disqusWrapper");
+      wrapper.style.display = wrapper.style.display === "none" ? "block" : "none";
+    };
+  </script>
 </body>
 </html>
-
-    </div>
-  </div>
-</body>
-</html>
-
